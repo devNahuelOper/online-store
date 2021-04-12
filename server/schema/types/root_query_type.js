@@ -11,6 +11,18 @@ const Category = mongoose.model("categories");
 const ProductType = require("./product_type");
 const Product = mongoose.model("products");
 
+const axios = require("axios");
+const AWSKey = require("../../../config/keys").AWSKey;
+
+const authOptions = {
+  method: "GET",
+  url:
+    "https://l02zs1n263.execute-api.us-east-1.amazonaws.com/default/generate-price",
+  headers: {
+    "x-api-key": AWSKey,
+  },
+};
+
 const RootQueryType = new GraphQLObjectType({
   name: "RootQueryType",
   fields: () => ({
@@ -43,15 +55,29 @@ const RootQueryType = new GraphQLObjectType({
     products: {
       type: new GraphQLList(ProductType),
       resolve() {
-        return Product.find({});
+        return Product.find({}).then(products => {
+          return products.map(product => {
+            return axios(authOptions).then(res => {
+              product.cost = res.data.cost;
+
+              return product;
+            })
+          })
+        });
       },
     },
     product: {
       type: ProductType,
       args: { _id: { type: new GraphQLNonNull(GraphQLID) } },
       resolve(_, args) {
-        return Product.findById(args._id);
-      }
+        return Product.findById(args._id).then(product => {
+          return axios(authOptions).then(res => {
+            product.cost = res.data.cost;
+
+            return product;
+          })
+        })
+      },
     },
   }),
 });
