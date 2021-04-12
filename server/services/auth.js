@@ -76,4 +76,19 @@ const login = async (data) => {
   }
 };
 
-module.exports = { register, logout, login };
+const verifyUser = async data => {
+  try {
+    const { token } = data;
+
+    const decoded = jwt.verify(token, secretKey);
+    const { id } = decoded;
+
+    const loggedIn = await User.findById(id).then(user => Boolean(user));
+
+    return { loggedIn };
+  } catch (err) {
+    return { loggedIn: false };
+  }
+}
+
+module.exports = { register, logout, login, verifyUser };

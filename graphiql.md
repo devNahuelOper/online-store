@@ -47,6 +47,12 @@ mutation LoginUser {
   }
 }
 
+mutation VerifyUser {
+  verifyUser(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNzRjZjcyYzY0MDVhZGQzNTZhMDgxMSIsImlhdCI6MTYxODI2OTA5MH0.w_nWjpJFHQaIR8r7eirkpzKH82d_baSp42HJgAPFZrg") {
+    loggedIn
+  }
+}
+
 query FetchUser {
   user(_id: "6074cca8d54e18d78d309659") {
     _id
