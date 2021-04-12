@@ -33,6 +33,15 @@ const mutation = new GraphQLObjectType({
         return AuthService.register(args);
       }
     },
+    logout: {
+      type: UserType,
+      args: {
+        _id: { type: GraphQLID }
+      },
+      resolve(_, args) {
+        return AuthService.logout(args);
+      }
+    },
     newCategory: {
       type: CategoryType,
       args: {

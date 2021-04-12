@@ -27,6 +27,16 @@ mutation RegisterUser {
   }
 }
 
+query FetchUser {
+  user(_id: "6074cca8d54e18d78d309659") {
+    _id
+    name
+    email
+    loggedIn
+    token
+  }
+}
+
 mutation NewCategory {
   newCategory(name: "Gadgets") {
     _id
