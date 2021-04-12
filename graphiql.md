@@ -18,6 +18,15 @@ fragment FindProduct on ProductType {
   weight
 }
 
+mutation RegisterUser {
+  register(name: "Tara Service", email: "TaraService@hotmail.com", password: "taraservice") {
+    _id
+    name
+    email
+    token
+  }
+}
+
 mutation NewCategory {
   newCategory(name: "Gadgets") {
     _id

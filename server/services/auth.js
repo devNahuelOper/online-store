@@ -1,0 +1,41 @@
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const secretKey = require("../../config/keys").secretOrKey;
+const User = require("../models/User");
+const validateRegisterInputs = require("../validation/register");
+
+const register = async (data) => {
+  try {
+    const { message, isValid } = validateRegisterInputs(data);
+
+    if (!isValid) throw new Error(message);
+
+    const { name, email, password } = data;
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) throw new Error("This user already exists");
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = new User(
+      {
+        name,
+        email,
+        password: hashedPassword,
+      },
+      (err) => {
+        if (err) throw err;
+      }
+    );
+
+    user.save();
+
+    const token = jwt.sign({ id: user._id }, secretKey);
+
+    return { token, loggedIn: true, ...user._doc, password: null };
+  } catch (err) {
+    throw err;
+  }
+};
+
+module.exports = { register };

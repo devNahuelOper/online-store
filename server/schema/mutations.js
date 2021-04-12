@@ -17,9 +17,22 @@ const ProductType = require("./types/product_type");
 const User = mongoose.model("users");
 const UserType = require("./types/user_type");
 
+const AuthService = require("../services/auth");
+
 const mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
+    register: {
+      type: UserType,
+      args: {
+        name: { type: GraphQLString },
+        email: { type: GraphQLString },
+        password: { type: GraphQLString },
+      },
+      resolve(_, args) {
+        return AuthService.register(args);
+      }
+    },
     newCategory: {
       type: CategoryType,
       args: {
