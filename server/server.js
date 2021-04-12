@@ -1,7 +1,11 @@
+const { User, Category, Product } = require("./models/index");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const db = require("../config/keys").mongoURI;
+
+const expressGraphQL = require("express-graphql").graphqlHTTP;
+const schema = require("./schema/schema");
 
 const app = express();
 
@@ -14,5 +18,13 @@ mongoose
   .then(() => console.log("Connected to MongoDB Successfully"))
   .catch((err) => console.log(err));
 
+
+app.use(
+  "/graphql",
+  expressGraphQL({
+    schema,
+    graphiql: true,
+  })
+);
 
 module.exports = app;
