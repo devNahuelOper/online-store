@@ -44,6 +44,12 @@ mutation DeleteProduct {
   }
 }
 
+mutation UpdateProductCategory {
+  updateProductCategory(productId: "6074b6c43bd825a36d066a37", categoryId: "6074b6563bd825a36d066a36") {
+    ...FindProduct
+  }
+}
+
 query FetchCategories {
   categories {
     _id

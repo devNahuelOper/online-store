@@ -57,6 +57,16 @@ const mutation = new GraphQLObjectType({
         );
       },
     },
+    updateProductCategory: {
+      type: ProductType,
+      args: {
+        productId: { type: new GraphQLNonNull(GraphQLID) },
+        categoryId: { type: new GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parentValue, { productId, categoryId }) {
+        return Product.updateProductCategory(productId, categoryId);
+      },
+    },
   },
 });
 
