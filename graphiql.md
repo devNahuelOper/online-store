@@ -25,10 +25,22 @@ mutation NewCategory {
   }
 }
 
+mutation DeleteCategory {
+  deleteCategory(_id: "6074b8cd3bd825a36d066a3a") {
+    _id
+  }
+}
+
 mutation NewProduct {
   newProduct(name: "Drone", description: "This thing flies mighty high and will satisfy all your peepin' needs") {
     _id
     name
+  }
+}
+
+mutation DeleteProduct {
+  deleteProduct(_id: "6074b9473bd825a36d066a3c") {
+    _id
   }
 }
 
