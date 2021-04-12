@@ -27,6 +27,26 @@ mutation RegisterUser {
   }
 }
 
+mutation LogoutUser {
+  logout(_id: "6074cf72c6405add356a0811") {
+    _id
+    name
+    email
+    loggedIn
+    token
+  }
+}
+
+mutation LoginUser {
+  login(email: "humphrydumpty@hotmail.com", password: "humphrey123") {
+    _id
+    name
+    email
+    loggedIn
+    token
+  }
+}
+
 query FetchUser {
   user(_id: "6074cca8d54e18d78d309659") {
     _id
