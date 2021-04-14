@@ -31,6 +31,14 @@ class Login extends React.Component {
     return (e) => this.setState({ [field]: e.target.value });
   }
 
+  updateCache(client, { data }) {
+    console.log(data);
+
+    client.writeData({
+      data: { isLoggedIn: data.login.loggedIn },
+    });
+  }
+
   render() {
     const { email, password, showPassword, message } = this.state;
 
@@ -40,10 +48,10 @@ class Login extends React.Component {
         onError={(err) => this.setState({ message: err.message })}
         onCompleted={(data) => {
           const { token } = data.login;
-          console.log(token);
           localStorage.setItem("auth-token", token);
           this.props.history.push("/");
         }}
+        update={(client, data) => this.updateCache(client, data)}
       >
         {(loginUser) => (
           <div className="form__wrap login__wrap">

@@ -9,6 +9,13 @@ const Mutations = {
       }
     }
   `,
+  VERIFY_USER: gql`
+    mutation VerifyUser($token: String!) {
+      verifyUser(token: $token) {
+        loggedIn
+      }
+    }
+  `,
 };
 
 export default Mutations;
