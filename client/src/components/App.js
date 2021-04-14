@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
-const FETCH_PRODUCTS = gql`
-  {
-    products {
-      _id
-      name
-    }
-  }
-`;
+import Queries from "../graphql/queries";
+const { FETCH_PRODUCTS } = Queries;
 
 function App() {
   return (
