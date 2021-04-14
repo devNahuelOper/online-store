@@ -1,5 +1,8 @@
 import React from "react";
 import { Query } from "react-apollo";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Typography from "@material-ui/core/Typography";
 
 import Queries from "../../graphql/queries";
 const { FETCH_PRODUCTS } = Queries;
@@ -12,11 +15,13 @@ const ProductIndex = () => {
         if (error) return `Error! ${error.message}`;
 
         return (
-          <ul>
+          <List>
             {data.products.map((product) => (
-              <li key={product._id}>{product.name}</li>
+              <ListItem key={product._id}>
+                <Typography variant="h6">{product.name}</Typography>
+              </ListItem>
             ))}
-          </ul>
+          </List>
         );
       }}
     </Query>
