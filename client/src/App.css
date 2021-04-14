@@ -47,10 +47,13 @@ form {
   flex-direction: column;
 }
 
-.logout-btn {
+#logout-btn {
   background-color: #607d8b;
   color: white;
   font-weight: 700;
+}
+#logout-btn:hover {
+  background-color: #819ca8;
 }
 
 .error {
