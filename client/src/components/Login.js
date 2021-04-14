@@ -2,10 +2,7 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import IconButton from "@material-ui/core/IconButton";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import PasswordField from "./common/fields/PasswordField";
 
 import Mutations from "../graphql/mutations";
 const { LOGIN_USER } = Mutations;
@@ -77,26 +74,11 @@ class Login extends React.Component {
                 onChange={this.updateField("email")}
               />
               <br />
-              <TextField
-                label="Password"
-                placeholder="Password"
-                type={showPassword ? "text" : "password"}
-                value={password}
-                variant="outlined"
-                fullWidth
+              <PasswordField
+                showPassword={showPassword}
+                password={password}
                 onChange={this.updateField("password")}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="Toggle Password Visibility"
-                        onClick={this.toggleShowPassword}
-                      >
-                        {showPassword ? <Visibility /> : <VisibilityOff />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
+                onClick={this.toggleShowPassword}
               />
               <br />
               <Button

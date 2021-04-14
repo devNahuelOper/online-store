@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.nav {
+  justify-content: space-around;
+}
+
+.nav-title {
+  color: #fff;
+  font-weight: 600;
+}
+
 .form__wrap {
   max-width: 500px;
   margin: 100px auto;
@@ -36,6 +45,12 @@
 form {
   display: flex;
   flex-direction: column;
+}
+
+.logout-btn {
+  background-color: #607d8b;
+  color: white;
+  font-weight: 700;
 }
 
 .error {
