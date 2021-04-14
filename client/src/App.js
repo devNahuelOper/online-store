@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
+
+const FETCH_PRODUCTS = gql`
+  {
+    products {
+      _id
+      name
+    }
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Query query={FETCH_PRODUCTS}>
+      {({ loading, error, data }) => {
+        if (loading) return "Loading...";
+        if (error) return `Error! ${error.message}`;
+
+        return (
+          <ul>
+            {data.products.map(product => (
+              <li key={product._id}>{product.name}</li>
+            ))}
+          </ul>
+        )
+      }}
+    </Query>
   );
 }
 

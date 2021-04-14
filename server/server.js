@@ -6,6 +6,7 @@ const db = require("../config/keys").mongoURI;
 
 const expressGraphQL = require("express-graphql").graphqlHTTP;
 const schema = require("./schema/schema");
+const cors = require("cors");
 
 const app = express();
 
@@ -18,6 +19,8 @@ mongoose
   .then(() => console.log("Connected to MongoDB Successfully"))
   .catch((err) => console.log(err));
 
+
+app.use(cors());
 
 app.use(
   "/graphql",
