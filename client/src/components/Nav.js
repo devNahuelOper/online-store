@@ -27,7 +27,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: `${1.5}rem`,
     "&:hover": {
-      textShadow: `${2}px ${2}px #726d6d80`,
+      textShadow: "2px 2px #111111cf",
+      transform: "perspective(500px) translateZ(10px)",
+      transition: "0.5s",
     },
   },
   toolBar: {
@@ -57,7 +59,10 @@ const Nav = (props) => {
                 <AppBar position="static" className={classes.root}>
                   <Toolbar component="nav" className="nav">
                     <Link to="/">
-                      <Typography variant="h5" className="nav-title">
+                      <Typography
+                        variant="h5"
+                        className={`nav-title ${classes.title}`}
+                      >
                         Products
                       </Typography>
                     </Link>
@@ -72,13 +77,19 @@ const Nav = (props) => {
                       />
                     ) : (
                       <Link to="/login">
-                        <Typography variant="h5" className="nav-title">
+                        <Typography
+                          variant="h5"
+                          className={`nav-title ${classes.title}`}
+                        >
                           Login
                         </Typography>
                       </Link>
                     )}
                     <Link to="/register">
-                      <Typography variant="h5" className="nav-title">
+                      <Typography
+                        variant="h5"
+                        className={`nav-title ${classes.title}`}
+                      >
                         Register
                       </Typography>
                     </Link>
