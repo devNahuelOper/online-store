@@ -32,6 +32,10 @@
   justify-content: space-around;
 }
 
+.MuiAppBar-colorPrimary {
+  background-color: #363636;
+}
+
 .nav-title {
   color: #fff;
   font-weight: 600;

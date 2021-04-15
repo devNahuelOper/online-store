@@ -59,7 +59,7 @@
 }
 
 #loginForm .MuiButton-containedPrimary:hover,
-#registerForm .MuiButton-containedPrimary {
+#registerForm .MuiButton-containedPrimary:hover {
   color: #e0cce6;
   background: linear-gradient(24deg, #8632bb, #4e408a);
   box-shadow: 0px 0px 1px 1px inset #a84cb4;
