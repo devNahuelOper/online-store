@@ -40,6 +40,11 @@ const Nav = (props) => {
                       </Typography>
                     </Link>
                   )}
+                  <Link to="/register">
+                    <Typography variant="h5" className="nav-title">
+                      Register
+                    </Typography>
+                  </Link>
                 </Toolbar>
               </AppBar>
             );
