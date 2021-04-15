@@ -9,7 +9,7 @@ const EmailField = ({ email, onChange }) => {
       type="email"
       variant="outlined"
       fullWidth
-      email={email}
+      value={email}
       onChange={onChange}
     />
   );
