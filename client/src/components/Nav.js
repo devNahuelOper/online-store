@@ -58,7 +58,7 @@ const Nav = (props) => {
               <MuiThemeProvider theme={theme}>
                 <AppBar position="static" className={classes.root}>
                   <Toolbar component="nav" className="nav">
-                    <Link to="/">
+                    <Link to="/products">
                       <Typography
                         variant="h5"
                         className={`nav-title ${classes.title}`}

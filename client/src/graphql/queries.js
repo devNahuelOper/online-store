@@ -16,8 +16,8 @@ const Queries = {
     }
   `,
   FETCH_PRODUCT: gql`
-    query FetchProduct($id: ID!) {
-      product(_id: $id) {
+    query FetchProduct($_id: ID!) {
+      product(_id: $_id) {
         _id
         name
         description
