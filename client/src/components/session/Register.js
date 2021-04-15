@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import PasswordField from "../common/fields/PasswordField";
 import EmailField from "../common/fields/EmailField";
 import NameField from "../common/fields/NameField";
+import "./session.css";
 
 import Mutations from "../../graphql/mutations";
 const { REGISTER_USER } = Mutations;
