@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import AuthRoute from "../util/route_util";
 import ProductIndex from "./products/ProductIndex";
-import Login from "./Login";
+import Login from "./session/Login";
 import Nav from "./Nav";
 import "../App.css";
 

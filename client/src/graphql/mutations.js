@@ -16,6 +16,15 @@ const Mutations = {
       }
     }
   `,
+  REGISTER_USER: gql`
+    mutation RegisterUser($name: String!, $email: String!, $password: String!) {
+      register(name: $name, email: $email, password: $password) {
+        _id
+        name
+        email
+      }
+    }
+  `,
 };
 
 export default Mutations;
