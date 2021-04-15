@@ -22,6 +22,8 @@ const Mutations = {
         _id
         name
         email
+        token
+        loggedIn
       }
     }
   `,

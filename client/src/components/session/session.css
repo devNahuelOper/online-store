@@ -1,6 +1,12 @@
+.login__wrap,
 .register__wrap {
   background-color: #363636;
   border: 1px solid #af43d1;
+}
+
+#loginForm {
+  box-shadow: 0px 0px 2px 2px inset #a91fd4ad, 0px 0px 2px 2px inset #624eb4;
+  margin: 8px 8px -20px 8px;
 }
 
 #registerForm {
@@ -8,43 +14,54 @@
   margin: 4px 4px -10px 4px;
 }
 
+#loginForm .MuiInputLabel-outlined,
 #registerForm .MuiInputLabel-outlined {
   color: #a5a5a596;
 }
 
+#loginForm .MuiInputLabel-outlined.MuiInputLabel-shrink,
 #registerForm .MuiInputLabel-outlined.MuiInputLabel-shrink {
   color: #af43d1;
   color: #a5a5a5f7;
 }
 
+#loginForm .MuiOutlinedInput-root,
 #registerForm .MuiOutlinedInput-root {
   border-radius: 8px;
   border: 1px solid #af43d1;
+  box-shadow: 0px 0px 4px 1px inset #5f45c4;
   outline: 0;
 }
 
+#loginForm .MuiOutlinedInput-input,
 #registerForm .MuiOutlinedInput-input {
   color: #ccbad1;
-  box-shadow: 0px 0px 4px 1px inset #5f45c4;
+  /* box-shadow: 0px 0px 4px 1px inset #5f45c4; */
   border-radius: inherit;
 }
 
-#registerForm .MuiOutlinedInput-inputAdornedEnd {
-  box-shadow: 1px 0px 2px 0px inset #5f45c4, 1px 1px 1px 0px inset #5f45c4,
-    2px 0px 0px 0px inset #363636, 1px -1px 1px 0px inset #5f45c4;
-}
-
+#loginForm .MuiOutlinedInput-notchedOutline,
 #registerForm .MuiOutlinedInput-notchedOutline {
   outline: 0;
   border: 0;
 }
 
+#loginForm .MuiIconButton-root,
 #registerForm .MuiIconButton-root {
   color: #a5a5a596;
 }
 
+#loginForm .MuiButton-containedPrimary,
 #registerForm .MuiButton-containedPrimary {
   color: #cec1d2;
   background: linear-gradient(174deg, #8632bb, #4e408a);
   box-shadow: 0px 0px 1px 1px inset #9e38ab;
+}
+
+#loginForm .MuiButton-containedPrimary:hover,
+#registerForm .MuiButton-containedPrimary {
+  color: #e0cce6;
+  background: linear-gradient(24deg, #8632bb, #4e408a);
+  box-shadow: 0px 0px 1px 1px inset #a84cb4;
+  transition: 1s;
 }
