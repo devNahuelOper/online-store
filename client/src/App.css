@@ -59,12 +59,19 @@ form {
 }
 
 #logout-btn {
-  background-color: #607d8b;
-  color: white;
-  font-weight: 700;
+  /* background-color: #607d8b; */
+  background-color: #434242;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
+    0px 0px 2px 1px inset #8d5cbaf0;
+  color: #e3d9ea;
+  border: 1px solid #4a4ae08a;
+  font-weight: 600;
+  order: 3;
 }
 #logout-btn:hover {
-  background-color: #819ca8;
+  /* background-color: #819ca8; */
+  background-color: #555454;
 }
 
 .error {
