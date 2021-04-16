@@ -89,6 +89,12 @@ textarea {
   color: #1db11d;
 }
 
+.error, .success {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

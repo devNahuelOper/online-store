@@ -28,7 +28,7 @@ const Mutations = {
     }
   `,
   CREATE_PRODUCT: gql`
-    mutation CreateProduct($name: String, $description: String, $weight: Number) {
+    mutation CreateProduct($name: String, $description: String, $weight: Float) {
       newProduct(name: $name, description: $description, weight: $weight) {
         _id
         name

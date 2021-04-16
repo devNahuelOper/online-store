@@ -101,7 +101,7 @@
 }
 
 .new-description {
-  color: #a5a5a596;
+  color: #ccbad1;
   font-size: 1rem;
   padding: 18.5px 14px;
   border: 1px solid #af43d1;
@@ -117,6 +117,7 @@
 
 .product-weight input[type="number" i] {
   color: #a5a5a596;
+  color: #ccbad1;
   padding-left: 0.5em;
 }
 

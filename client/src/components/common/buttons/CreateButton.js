@@ -16,7 +16,7 @@ const CreateButton = ({ entity, color = "#363636" }) => {
   });
   return (
     <MuiThemeProvider theme={theme}>
-      <Button variant="contained" color="primary" className={`create-btn create-${entity}-btn`}>
+      <Button variant="contained" color="primary" type="submit" className={`create-btn create-${entity}-btn`}>
         Create {entity}
       </Button>
     </MuiThemeProvider>
