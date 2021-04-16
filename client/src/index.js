@@ -6,7 +6,8 @@ import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
-import { createHttpLink } from "apollo-link-http";
+// import { createHttpLink } from "apollo-link-http";
+import { createUploadLink } from "apollo-upload-client";
 import { ApolloProvider } from "react-apollo";
 import { onError } from "apollo-link-error";
 import { ApolloLink } from "apollo-link";
@@ -17,7 +18,7 @@ const cache = new InMemoryCache({
   dataIdFromObject: (object) => object._id || null,
 });
 
-const httpLink = createHttpLink({
+const httpLink = createUploadLink({
   uri: "http://localhost:5000/graphql",
   headers: {
     authorization: localStorage.getItem("auth-token"),

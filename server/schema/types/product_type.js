@@ -9,6 +9,8 @@ const {
 const mongoose = require("mongoose");
 const Product = mongoose.model("products");
 
+const { s3 } = require("../../services/s3");
+
 const ProductType = new GraphQLObjectType({
   name: "ProductType",
   fields: () => ({
@@ -25,6 +27,19 @@ const ProductType = new GraphQLObjectType({
     },
     weight: { type: GraphQLFloat },
     cost: { type: GraphQLInt },
+    image: {
+      type: GraphQLString,
+      resolve(parentValue) {
+        let imageUrl;
+        if (parentValue.image) {
+          imageUrl = s3.getSignedUrl('getObject', {
+            Bucket: "graphql-store",
+            Key: parentValue.image
+          });
+        }
+        return imageUrl || parentValue.image;
+      }
+    }
   }),
 });
 

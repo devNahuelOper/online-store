@@ -20,6 +20,9 @@ const UserType = require("./types/user_type");
 
 const AuthService = require("../services/auth");
 
+const { singleFileUpload } = require("../services/s3");
+const { GraphQLUpload } = require("graphql-upload");
+
 const mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
@@ -86,15 +89,14 @@ const mutation = new GraphQLObjectType({
         name: { type: GraphQLString },
         description: { type: GraphQLString },
         weight: { type: GraphQLFloat },
+        image: { type: GraphQLUpload },
       },
-      // resolve(parentValue, { name, description }) {
-      //   return new Product({ name, description }).save();
-      // },
-      async resolve(_, { name, description, weight }, ctx) {
+      async resolve(_, { name, description, weight, image }, ctx) {
         const validUser = await AuthService.verifyUser({ token: ctx.token });
-
+        const newObj = {};
         if (validUser.loggedIn) {
-          return new Product({ name, description, weight }).save();
+          if (image) newObj.image = await singleFileUpload(image);
+          return new Product({ name, description, weight, ...newObj }).save();
         } else {
           throw new Error(
             "Sorry, you need to be logged in to create a product."

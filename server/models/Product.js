@@ -1,28 +1,36 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "users",
+const ProductSchema = new Schema(
+  {
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
+    },
+    category: {
+      type: Schema.Types.ObjectId,
+      ref: "categories",
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    weight: {
+      type: Number,
+      required: false,
+    },
+    image: {
+      type: String,
+    },
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: "categories",
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  weight: {
-    type: Number,
-    required: false,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 ProductSchema.statics.updateProductCategory = (productId, categoryId) => {
   const Product = mongoose.model("products");
