@@ -19,6 +19,9 @@ const cache = new InMemoryCache({
 
 const httpLink = createHttpLink({
   uri: "http://localhost:5000/graphql",
+  headers: {
+    authorization: localStorage.getItem("auth-token"),
+  },
 });
 
 const errorLink = onError(({ graphQLErrors }) => {

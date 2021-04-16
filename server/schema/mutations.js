@@ -31,35 +31,35 @@ const mutation = new GraphQLObjectType({
       },
       resolve(_, args) {
         return AuthService.register(args);
-      }
+      },
     },
     logout: {
       type: UserType,
       args: {
-        _id: { type: GraphQLID }
+        _id: { type: GraphQLID },
       },
       resolve(_, args) {
         return AuthService.logout(args);
-      }
+      },
     },
     login: {
       type: UserType,
       args: {
         email: { type: GraphQLString },
-        password: { type: GraphQLString }
+        password: { type: GraphQLString },
       },
       resolve(_, args) {
         return AuthService.login(args);
-      }
+      },
     },
     verifyUser: {
       type: UserType,
       args: {
-        token: { type: GraphQLString }
+        token: { type: GraphQLString },
       },
       resolve(_, args) {
         return AuthService.verifyUser(args);
-      }
+      },
     },
     newCategory: {
       type: CategoryType,
@@ -85,8 +85,17 @@ const mutation = new GraphQLObjectType({
         name: { type: GraphQLString },
         description: { type: GraphQLString },
       },
-      resolve(parentValue, { name, description }) {
-        return new Product({ name, description }).save();
+      // resolve(parentValue, { name, description }) {
+      //   return new Product({ name, description }).save();
+      // },
+      async resolve(_, { name, description, weight }, ctx) {
+        const validUser = await AuthService.verifyUser({ token: ctx.token });
+
+        if (validUser.loggedIn) {
+          return new Product({ name, description, weight }).save();
+        } else {
+          throw new Error('Sorry, you need to be logged in to create a product.');
+        }
       },
     },
     deleteProduct: {

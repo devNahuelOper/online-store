@@ -19,14 +19,18 @@ mongoose
   .then(() => console.log("Connected to MongoDB Successfully"))
   .catch((err) => console.log(err));
 
-
 app.use(cors());
 
 app.use(
   "/graphql",
-  expressGraphQL({
-    schema,
-    graphiql: true,
+  expressGraphQL((req) => {
+    return {
+      schema,
+      context: {
+        token: req.headers.authorization,
+      },
+      graphiql: true,
+    };
   })
 );
 

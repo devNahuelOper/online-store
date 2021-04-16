@@ -22,6 +22,7 @@ const Queries = {
         name
         description
         cost
+        weight
         category {
           _id
           name
