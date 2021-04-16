@@ -1,7 +1,9 @@
 import React from "react";
 import { Mutation } from "react-apollo";
-import TextField from "@material-ui/core/TextField";
+import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+import Input from "@material-ui/core/Input";
 import NameField from "../common/fields/NameField";
+import CreateButton from "../common/buttons/CreateButton";
 
 import Mutations from "../../graphql/mutations";
 import Queries from "../../graphql/queries";
@@ -16,6 +18,7 @@ class ProductCreate extends React.Component {
       description: "",
       weight: "",
       message: "",
+      messageType: "success",
     };
   }
 
@@ -56,19 +59,57 @@ class ProductCreate extends React.Component {
   }
 
   render() {
-    const { name, description, weight, message } = this.state;
+    const { name, description, weight, message, messageType } = this.state;
 
     return (
       <Mutation
         mutation={CREATE_PRODUCT}
-        onError={(err) => this.setState({ message: err.message })}
+        onError={(err) =>
+          this.setState({ message: err.message, messageType: "error" })
+        }
         update={(cache, data) => this.updateCache(cache, data)}
-        onCompleted={data => {
-          this.setState({ message: `${data.newProduct.name} created successfully`});
-          const goToProduct = () => this.props.history.push(`/products/${data.newProduct._id}`);
+        onCompleted={(data) => {
+          console.log(data);
+          this.setState({
+            message: `${data.newProduct.name} created successfully`,
+            messageType: "success",
+          });
+          const goToProduct = () =>
+            this.props.history.push(`/products/${data.newProduct._id}`);
           setTimeout(goToProduct, 1000);
         }}
-      ></Mutation>
+      >
+        {(newProduct, { data }) => (
+          <div className="form__wrap">
+            <form onSubmit={(e) => this.handleSubmit(e, newProduct)}>
+              <NameField
+                name={name}
+                entity="Product"
+                onChange={this.updateField("name")}
+              />
+              <br />
+              <TextareaAutosize
+                aria-label="minimum height"
+                rowsMin={5}
+                placeholder="Description"
+                value={description}
+                onChange={this.fieldUpdate("description")}
+              />
+              <br />
+              <Input
+                type="number"
+                placeholder="Weight"
+                fullWidth
+                value={weight}
+                onChange={this.updateField("weight")}
+              />
+              <br />
+              <CreateButton entity="product"/>
+            </form>
+            <p className={messageType}>{message}</p>
+          </div>
+        )}
+      </Mutation>
     );
   }
 }
