@@ -29,6 +29,11 @@ const ProductIndex = () => {
                 </ListItem>
               ))}
             </List>
+            <Link to="/products/new" className="new-product-link">
+              <Typography variant="h6" className="product-name">
+                Create Product
+              </Typography>
+            </Link>
           </div>
         );
       }}
