@@ -15,7 +15,7 @@ const ProductIndex = () => {
       {({ loading, error, data }) => {
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
-        // console.log(data);
+        console.log(data);
         return (
           <div className="product-index">
             <List id="product-list" className="product-list">
