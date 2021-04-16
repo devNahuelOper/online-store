@@ -114,3 +114,16 @@
   color: #a5a5a596;
   font-family: inherit;
 }
+
+.product-weight input[type="number" i] {
+  color: #a5a5a596;
+}
+
+.product-weight input[type="number" i]::-webkit-input-placeholder {
+  color: white;
+  padding-left: 0.5em;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid rgb(119 53 174);
+}

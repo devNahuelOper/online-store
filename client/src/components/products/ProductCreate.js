@@ -98,6 +98,7 @@ class ProductCreate extends React.Component {
               />
               <br />
               <Input
+                className="product-weight"
                 type="number"
                 placeholder="Weight"
                 fullWidth
