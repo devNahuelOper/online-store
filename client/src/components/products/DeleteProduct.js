@@ -9,8 +9,8 @@ const { DELETE_PRODUCT } = Mutations;
 const { FETCH_PRODUCTS } = Queries;
 
 const DeleteProduct = ({ _id, name }) => {
-  // const { _id, name } = props;
   const history = useHistory();
+  
   return (
     <Mutation
       mutation={DELETE_PRODUCT}

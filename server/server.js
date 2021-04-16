@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const db = require("../config/keys").mongoURI;
 
 const expressGraphQL = require("express-graphql").graphqlHTTP;
+const { graphQLUploadExpress } = require("graphql-upload");
 const schema = require("./schema/schema");
 const cors = require("cors");
 
@@ -23,6 +24,7 @@ app.use(cors());
 
 app.use(
   "/graphql",
+  graphQLUploadExpress({ maxFileSize: 10000000, maxFiles: 10 }),
   expressGraphQL((req) => {
     return {
       schema,
