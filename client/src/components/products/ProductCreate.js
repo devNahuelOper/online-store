@@ -74,9 +74,9 @@ class ProductCreate extends React.Component {
             message: `${data.newProduct.name} created successfully`,
             messageType: "success",
           });
-          // const goToProduct = () =>
-          //   this.props.history.push(`/products/${data.newProduct._id}`);
-          // setTimeout(goToProduct, 1000);
+          const goToProduct = () =>
+            this.props.history.push(`/products/${data.newProduct._id}`);
+          setTimeout(goToProduct, 1000);
         }}
       >
         {(newProduct, { data }) => (

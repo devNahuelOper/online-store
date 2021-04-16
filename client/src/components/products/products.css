@@ -55,7 +55,7 @@
   background: #363636;
   box-shadow: 0px 0px 2px 1px inset #a91fd4ad, 0px 0px 2px 1px inset #624eb4;
   position: absolute;
-  top: 200%;
+  top: 120%;
   left: calc(50% - 77px);
 }
 
@@ -130,6 +130,6 @@
   border-bottom: 1px solid rgb(119 53 174);
 }
 
-.MuiInput-underline:after{
+.MuiInput-underline:after {
   border-bottom: 2px solid #af43d1;
 }
