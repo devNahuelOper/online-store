@@ -58,6 +58,14 @@ form {
   border-radius: inherit;
 }
 
+.form__wrap {
+  background-color: #363636;
+}
+
+textarea {
+  border-radius: 0.5em;
+}
+
 #logout-btn {
   /* background-color: #607d8b; */
   background-color: #434242;

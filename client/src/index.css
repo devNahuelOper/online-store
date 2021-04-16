@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  font-family: inherit;
+}
+
 #root {
   background: #dfdfdf;
   height: 100vh;

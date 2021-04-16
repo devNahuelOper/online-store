@@ -15,7 +15,7 @@ const ProductIndex = () => {
       {({ loading, error, data }) => {
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
-        console.log(data);
+        // console.log(data);
         return (
           <div className="product-index">
             <List id="product-list" className="product-list">
@@ -29,7 +29,7 @@ const ProductIndex = () => {
                 </ListItem>
               ))}
             </List>
-            <Link to="/products/new" className="new-product-link">
+            <Link to="/new" className="new-product-link">
               <Typography variant="h6" className="product-name">
                 Create Product
               </Typography>

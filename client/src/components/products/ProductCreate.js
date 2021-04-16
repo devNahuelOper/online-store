@@ -74,14 +74,14 @@ class ProductCreate extends React.Component {
             message: `${data.newProduct.name} created successfully`,
             messageType: "success",
           });
-          const goToProduct = () =>
-            this.props.history.push(`/products/${data.newProduct._id}`);
-          setTimeout(goToProduct, 1000);
+          // const goToProduct = () =>
+          //   this.props.history.push(`/products/${data.newProduct._id}`);
+          // setTimeout(goToProduct, 1000);
         }}
       >
         {(newProduct, { data }) => (
-          <div className="form__wrap">
-            <form onSubmit={(e) => this.handleSubmit(e, newProduct)}>
+          <div className="form__wrap create__product__wrap">
+            <form id="createProductForm" onSubmit={(e) => this.handleSubmit(e, newProduct)}>
               <NameField
                 name={name}
                 entity="Product"
@@ -90,10 +90,11 @@ class ProductCreate extends React.Component {
               <br />
               <TextareaAutosize
                 aria-label="minimum height"
+                className="new-description"
                 rowsMin={5}
                 placeholder="Description"
                 value={description}
-                onChange={this.fieldUpdate("description")}
+                onChange={this.updateField("description")}
               />
               <br />
               <Input

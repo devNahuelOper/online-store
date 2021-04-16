@@ -58,3 +58,59 @@
   top: 200%;
   left: calc(50% - 77px);
 }
+
+.create__product__wrap {
+  border: 1px solid #af43d1;
+}
+
+#createProductForm {
+  box-shadow: 0px 0px 2px 2px inset #a91fd4ad, 0px 0px 2px 2px inset #624eb4;
+  margin: 4px 4px -10px 4px;
+}
+
+#createProductForm .MuiInputLabel-outlined {
+  color: #a5a5a596;
+}
+
+#createProductForm .MuiInputLabel-outlined.MuiInputLabel-shrink {
+  color: #a5a5a5f7;
+}
+
+#createProductForm .MuiOutlinedInput-root {
+  border-radius: 8px;
+  border: 1px solid #af43d1;
+  box-shadow: 0px 0px 4px 1px inset #5f45c4;
+  outline: 0;
+  background: #6f6f6f;
+}
+
+#createProductForm .MuiOutlinedInput-input {
+  color: #ccbad1;
+  border-radius: inherit;
+}
+
+#createProductForm .MuiOutlinedInput-notchedOutline {
+  outline: 0;
+  border: 0;
+}
+
+#createProductForm .MuiButton-containedPrimary {
+  color: #cec1d2;
+  background: linear-gradient(174deg, #8632bb, #4e408a);
+  box-shadow: 0px 0px 1px 1px inset #9e38ab;
+}
+
+.new-description {
+  color: #a5a5a596;
+  font-size: 1rem;
+  padding: 18.5px 14px;
+  border: 1px solid #af43d1;
+  box-shadow: 0px 0px 4px 1px inset #5f45c4;
+  outline: 0;
+  background: #6f6f6f;
+}
+
+.new-description::-webkit-input-placeholder {
+  color: #a5a5a596;
+  font-family: inherit;
+}
