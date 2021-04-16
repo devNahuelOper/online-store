@@ -3,6 +3,7 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
+  GraphQLFloat,
   GraphQLID,
   GraphQLNonNull,
 } = graphql;
@@ -84,7 +85,7 @@ const mutation = new GraphQLObjectType({
       args: {
         name: { type: GraphQLString },
         description: { type: GraphQLString },
-        weight: { type: GraphQLInt },
+        weight: { type: GraphQLFloat },
       },
       // resolve(parentValue, { name, description }) {
       //   return new Product({ name, description }).save();

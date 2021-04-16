@@ -17,11 +17,11 @@ const ProductDetail = (props) => {
 
         const { name, description, cost } = data.product;
         return (
-          <div>
-            <h1>{name}</h1>
-            <p>Description: {description}</p>
-            <span>
-              Cost: <b>{cost}</b>
+          <div className="product-detail">
+            <h1 className="product-name">{name}</h1>
+            <p className="product-description">Description: {description}</p>
+            <span className="product-cost">
+              Cost: <b>${cost}.00</b>
             </span>
           </div>
         );

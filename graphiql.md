@@ -83,6 +83,18 @@ mutation NewProduct {
   }
 }
 
+mutation NewProduct {
+  newProduct(
+    name: "Sony Playstation 5"
+    description: "Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio*, and an all-new generation of incredible PlayStation® games."
+    weight: 4.5
+  ) {
+    _id
+    name
+  }
+}
+
+
 mutation DeleteProduct {
   deleteProduct(_id: "6074b9473bd825a36d066a3c") {
     _id

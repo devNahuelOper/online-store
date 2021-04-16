@@ -1,5 +1,11 @@
 const graphql = require("graphql");
-const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLInt } = graphql;
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLID,
+  GraphQLInt,
+  GraphQLFloat,
+} = graphql;
 const mongoose = require("mongoose");
 const Product = mongoose.model("products");
 
@@ -17,8 +23,8 @@ const ProductType = new GraphQLObjectType({
           .then((product) => product.category);
       },
     },
-    weight: { type: GraphQLInt },
-    cost: { type: GraphQLInt }
+    weight: { type: GraphQLFloat },
+    cost: { type: GraphQLInt },
   }),
 });
 
