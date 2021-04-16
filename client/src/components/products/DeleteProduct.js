@@ -1,12 +1,16 @@
 import React from "react";
 import { Mutation } from "react-apollo";
+import DeleteIcon from "@material-ui/icons/Delete";
+import { useHistory } from "react-router-dom";
 
 import Mutations from "../../graphql/mutations";
 import Queries from "../../graphql/queries";
 const { DELETE_PRODUCT } = Mutations;
 const { FETCH_PRODUCTS } = Queries;
 
-const DeleteProduct = (props) => {
+const DeleteProduct = ({ _id, name }) => {
+  // const { _id, name } = props;
+  const history = useHistory();
   return (
     <Mutation
       mutation={DELETE_PRODUCT}
@@ -21,12 +25,15 @@ const DeleteProduct = (props) => {
       {(deleteProduct, { data }) => (
         <a
           href="#"
+          className="delete-product"
           onClick={(e) => {
             e.preventDefault();
-            deleteProduct({ variables: { _id: props._id } });
+            deleteProduct({ variables: { _id } });
+            history.push("/products");
           }}
+          title={`Delete ${name}`}
         >
-          <span>Delete Product</span>
+          <DeleteIcon color="action"/>
         </a>
       )}
     </Mutation>

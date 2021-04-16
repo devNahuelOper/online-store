@@ -133,3 +133,19 @@
 .MuiInput-underline:after {
   border-bottom: 2px solid #af43d1;
 }
+
+.delete-product {
+  float: right;
+}
+
+.delete-product .MuiSvgIcon-root {
+  fill: #bbbbbb;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.delete-product .MuiSvgIcon-root:hover {
+  font-size: 1.5rem;
+  transition: 1s;
+  opacity: 1;
+}
