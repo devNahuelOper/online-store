@@ -84,6 +84,7 @@ const mutation = new GraphQLObjectType({
       args: {
         name: { type: GraphQLString },
         description: { type: GraphQLString },
+        weight: { type: GraphQLInt },
       },
       // resolve(parentValue, { name, description }) {
       //   return new Product({ name, description }).save();
@@ -94,7 +95,9 @@ const mutation = new GraphQLObjectType({
         if (validUser.loggedIn) {
           return new Product({ name, description, weight }).save();
         } else {
-          throw new Error('Sorry, you need to be logged in to create a product.');
+          throw new Error(
+            "Sorry, you need to be logged in to create a product."
+          );
         }
       },
     },
