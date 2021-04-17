@@ -10,6 +10,7 @@ import Queries from "../../graphql/queries";
 const { FETCH_PRODUCTS } = Queries;
 
 const ProductIndex = () => {
+  const altImage = "https://avatars.githubusercontent.com/u/16979527?v=4";
   return (
     <Query query={FETCH_PRODUCTS}>
       {({ loading, error, data }) => {
@@ -26,6 +27,8 @@ const ProductIndex = () => {
                       {product.name}
                     </Typography>
                   </Link>
+                  <br />
+                  <img className="product-avatar" src={product.image || altImage} alt={`${product.name} Photo`}/>
                 </ListItem>
               ))}
             </List>

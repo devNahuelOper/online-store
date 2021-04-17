@@ -5,6 +5,7 @@ import Queries from "../../graphql/queries";
 const { FETCH_PRODUCT } = Queries;
 
 const ProductDetail = (props) => {
+  const altImage = "https://avatars.githubusercontent.com/u/16979527?v=4";
   return (
     <Query
       query={FETCH_PRODUCT}
@@ -26,7 +27,9 @@ const ProductDetail = (props) => {
                 Cost: <b>${cost}.00</b>
               </span>
             </article>
-            <figure className="product-image">{image && <img src={image} />}</figure>
+            <figure className="product-image">
+              <img src={image || altImage} />
+            </figure>
           </div>
         );
       }}
