@@ -123,7 +123,6 @@
 
 .product-weight input[type="number" i]::-webkit-input-placeholder {
   color: white;
-  
 }
 
 .MuiInput-underline:before {
@@ -148,4 +147,19 @@
   font-size: 1.5rem;
   transition: 1s;
   opacity: 1;
+}
+
+input[type="file" i] {
+  color: #737373;
+  outline: 0;
+}
+
+input[type="file" i]::-webkit-file-upload-button {
+  color: #ccbad1;
+  border: 1px solid #af43d1;
+  border-radius: 0.25em;
+  padding: 0.25em;
+  box-shadow: 0px 0px 4px 1px inset #5f45c4;
+  outline: 0;
+  background: #6f6f6f;
 }

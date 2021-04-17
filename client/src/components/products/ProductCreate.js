@@ -19,11 +19,16 @@ class ProductCreate extends React.Component {
       weight: "",
       message: "",
       messageType: "success",
+      image: null,
     };
   }
 
   updateField(field) {
     return (e) => this.setState({ [field]: e.target.value });
+  }
+
+  updateImage(file) {
+    this.setState({ image: file });
   }
 
   updateCache(cache, { data }) {
@@ -48,18 +53,26 @@ class ProductCreate extends React.Component {
   handleSubmit(e, newProduct) {
     e.preventDefault();
 
-    const { name, description, weight } = this.state;
+    const { name, description, weight, image } = this.state;
     newProduct({
       variables: {
         name,
         description,
         weight: parseInt(weight),
+        image,
       },
     });
   }
 
   render() {
-    const { name, description, weight, message, messageType } = this.state;
+    const {
+      name,
+      description,
+      weight,
+      message,
+      messageType,
+      image,
+    } = this.state;
 
     return (
       <Mutation
@@ -81,7 +94,10 @@ class ProductCreate extends React.Component {
       >
         {(newProduct, { data }) => (
           <div className="form__wrap create__product__wrap">
-            <form id="createProductForm" onSubmit={(e) => this.handleSubmit(e, newProduct)}>
+            <form
+              id="createProductForm"
+              onSubmit={(e) => this.handleSubmit(e, newProduct)}
+            >
               <NameField
                 name={name}
                 entity="Product"
@@ -106,7 +122,17 @@ class ProductCreate extends React.Component {
                 onChange={this.updateField("weight")}
               />
               <br />
-              <CreateButton entity="product"/>
+              <input
+                type="file"
+                onChange={({
+                  target: {
+                    validity,
+                    files: [file],
+                  },
+                }) => validity.valid && this.updateImage(file)}
+              />
+              <br />
+              <CreateButton entity="product" />
             </form>
             <p className={messageType}>{message}</p>
           </div>
