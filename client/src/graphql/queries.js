@@ -12,6 +12,8 @@ const Queries = {
           _id
           name
         }
+        weight
+        image
       }
     }
   `,
