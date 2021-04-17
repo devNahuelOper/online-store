@@ -10,7 +10,7 @@ const singleFileUpload = async file => {
   const { filename, mimetype, createReadStream } = await file;
   const fileStream = createReadStream();
   const path = require("path");
-
+  
   const Key = new Date().getTime().toString() + path.extname(filename);
   
   const uploadParams = {
@@ -20,7 +20,7 @@ const singleFileUpload = async file => {
   }
 
   const result = await s3.upload(uploadParams).promise();
-
+  console.log(result);
   return result.Key;
 }
 

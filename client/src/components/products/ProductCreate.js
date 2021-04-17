@@ -124,6 +124,7 @@ class ProductCreate extends React.Component {
               <br />
               <input
                 type="file"
+                accept="image/*"
                 onChange={({
                   target: {
                     validity,

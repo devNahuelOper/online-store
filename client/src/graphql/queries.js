@@ -29,6 +29,7 @@ const Queries = {
           _id
           name
         }
+        image
       }
     }
   `,
