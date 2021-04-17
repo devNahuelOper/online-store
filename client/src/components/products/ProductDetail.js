@@ -15,15 +15,18 @@ const ProductDetail = (props) => {
         if (error) return `Error! ${error.message}`;
         console.log(data);
 
-        const { _id, name, description, cost } = data.product;
+        const { _id, name, description, cost, image } = data.product;
         return (
           <div className="product-detail">
             <DeleteProduct _id={_id} name={name} />
-            <h1 className="product-name">{name}</h1>
-            <p className="product-description">Description: {description}</p>
-            <span className="product-cost">
-              Cost: <b>${cost}.00</b>
-            </span>
+            <article className="product-info">
+              <h1 className="product-name">{name}</h1>
+              <p className="product-description">{description}</p>
+              <span className="product-cost">
+                Cost: <b>${cost}.00</b>
+              </span>
+            </article>
+            <figure className="product-image">{image && <img src={image} />}</figure>
           </div>
         );
       }}

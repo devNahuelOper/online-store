@@ -31,11 +31,30 @@
   padding: 1.5em;
   max-width: 70%;
   margin: 6em auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .product-detail .product-name {
   text-shadow: 0px 0px 12px #a91fd4;
   -webkit-text-stroke: 1.5px #821fd496;
+  margin: unset;
+  font-size: 3em;
+}
+
+.product-info {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-image img {
+  border-radius: 0.5em;
+}
+
+.product-description {
+  font-size: 2em;
+  margin-top: -40px;
 }
 
 .product-cost b {
@@ -135,6 +154,7 @@
 
 .delete-product {
   float: right;
+  order: 3;
 }
 
 .delete-product .MuiSvgIcon-root {
