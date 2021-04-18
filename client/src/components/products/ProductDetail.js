@@ -28,7 +28,7 @@ const ProductDetail = (props) => {
               </span>
             </article>
             <figure className="product-image">
-              <img src={image || altImage} />
+              <img src={image || altImage} alt={name}/>
             </figure>
           </div>
         );

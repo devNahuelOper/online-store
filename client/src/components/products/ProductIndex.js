@@ -28,7 +28,7 @@ const ProductIndex = () => {
                     </Typography>
                   </Link>
                   <br />
-                  <img className="product-avatar" src={product.image || altImage} alt={`${product.name} Photo`}/>
+                  <img className="product-avatar" src={product.image || altImage} alt={product.name}/>
                 </ListItem>
               ))}
             </List>
