@@ -20,6 +20,7 @@ class ProductCreate extends React.Component {
       message: "",
       messageType: "success",
       image: null,
+      preview: null,
     };
   }
 
@@ -28,7 +29,8 @@ class ProductCreate extends React.Component {
   }
 
   updateImage(file) {
-    this.setState({ image: file });
+    const src = URL.createObjectURL(file);
+    this.setState({ image: file, preview: src });
   }
 
   updateCache(cache, { data }) {
@@ -71,7 +73,7 @@ class ProductCreate extends React.Component {
       weight,
       message,
       messageType,
-      image,
+      preview,
     } = this.state;
 
     return (
@@ -122,16 +124,19 @@ class ProductCreate extends React.Component {
                 onChange={this.updateField("weight")}
               />
               <br />
-              <input
-                type="file"
-                accept="image/*"
-                onChange={({
-                  target: {
-                    validity,
-                    files: [file],
-                  },
-                }) => validity.valid && this.updateImage(file)}
-              />
+              <figure className="preview__wrap">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={({
+                    target: {
+                      validity,
+                      files: [file],
+                    },
+                  }) => validity.valid && this.updateImage(file)}
+                />
+                {preview && <img src={preview} className="image-preview" />}
+              </figure>
               <br />
               <CreateButton entity="product" />
             </form>
