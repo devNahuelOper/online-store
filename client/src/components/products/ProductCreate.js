@@ -2,6 +2,7 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
 import NameField from "../common/fields/NameField";
 import CreateButton from "../common/buttons/CreateButton";
 
@@ -125,9 +126,12 @@ class ProductCreate extends React.Component {
               />
               <br />
               <figure className="preview__wrap">
+                <Button variant="contained" component="label">
+                  Upload Image
                 <input
                   type="file"
                   accept="image/*"
+                  hidden
                   onChange={({
                     target: {
                       validity,
@@ -135,6 +139,7 @@ class ProductCreate extends React.Component {
                     },
                   }) => validity.valid && this.updateImage(file)}
                 />
+                </Button>
                 {preview && <img src={preview} className="image-preview" />}
               </figure>
               <br />
