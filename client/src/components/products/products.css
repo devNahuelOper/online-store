@@ -213,9 +213,9 @@ input[type="file" i]::-webkit-file-upload-button {
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
     0px 0px 0px 1px #bd44bd;
   background-color: #6f6f6f;
-  color: #e0d5d5;
+  color: #ccbad1;
   border: 1px solid #5036ae;
-  border-radius: 16px;
+  border-radius: 0.5em;
 }
 
 .image-preview {
