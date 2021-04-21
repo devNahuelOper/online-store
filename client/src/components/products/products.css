@@ -212,10 +212,21 @@ input[type="file" i]::-webkit-file-upload-button {
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
     0px 0px 0px 1px #bd44bd;
-  background-color: #6f6f6f;
+  /* background-color: #6f6f6f; */
+  background-color: rgba(0, 0, 0, 0.4);
   color: #ccbad1;
   border: 1px solid #5036ae;
   border-radius: 0.5em;
+}
+
+.preview__wrap .MuiButton-contained:hover {
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
+    0px 0px 0px 1px #bd44bd;
+  background-color: rgba(0, 0, 0, 0.4);
+  filter: brightness(1.2);
+  transform: perspective(300px) translateZ(5px);
+  transition: 1s;
 }
 
 .image-preview {
