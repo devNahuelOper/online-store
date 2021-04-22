@@ -113,6 +113,30 @@ const mutation = new GraphQLObjectType({
         );
       },
     },
+    updateProduct: {
+      type: ProductType,
+      args: {
+        _id: { type: new GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
+        weight: { type: GraphQLFloat },
+        image: { type: GraphQLUpload },
+      },
+      async resolve(_, { _id, name, description, weight, image }) {
+        const updateObj = { _id };
+        if (name) updateObj.name = name;
+        if (description) updateObj.description = description;
+        if (weight) updateObj.weight = weight;
+        if (image) updateObj.image = await singleFileUpload(image);
+
+        return Product.findOneAndUpdate(
+          { _id },
+          { $set: updateObj },
+          { new: true },
+          (err, product) => product
+        );
+      },
+    },
     updateProductCategory: {
       type: ProductType,
       args: {
