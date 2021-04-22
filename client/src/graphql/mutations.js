@@ -28,8 +28,18 @@ const Mutations = {
     }
   `,
   CREATE_PRODUCT: gql`
-    mutation CreateProduct($name: String, $description: String, $weight: Float, $image: Upload!) {
-      newProduct(name: $name, description: $description, weight: $weight, image: $image) {
+    mutation CreateProduct(
+      $name: String
+      $description: String
+      $weight: Float
+      $image: Upload!
+    ) {
+      newProduct(
+        name: $name
+        description: $description
+        weight: $weight
+        image: $image
+      ) {
         _id
         name
         description
@@ -44,7 +54,23 @@ const Mutations = {
         _id
       }
     }
-  `
+  `,
+  UPDATE_PRODUCT_NAME: gql`
+    mutation updateProductName($_id: ID!, $name: String) {
+      updateProduct(_id: $_id, name: $name) {
+        _id
+        name
+      }
+    }
+  `,
+  UPDATE_PRODUCT_DESCRIPTION: gql`
+    mutation updateProductDescription($_id: ID!, $name: String) {
+      updateProduct(_id: $_id, description: $description) {
+        _id
+        description
+      }
+    }
+  `,
 };
 
 export default Mutations;
