@@ -71,6 +71,14 @@ const Mutations = {
       }
     }
   `,
+  UPDATE_PRODUCT_WEIGHT: gql`
+    mutation updateProductWeight($_id: ID!, $weight: Float) {
+      updateProduct(_id: $_id, weight: $weight) {
+        _id
+        name
+      }
+    }
+  `,
 };
 
 export default Mutations;
