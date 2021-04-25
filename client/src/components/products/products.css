@@ -166,11 +166,16 @@
 }
 
 .MuiInput-underline:before {
-  border-bottom: 1px solid rgb(119 53 174);
+  border-bottom: 1px solid #bbb !important;
+  /* border-bottom: 1px solid rgb(119 53 174) !important; */
 }
 
 .MuiInput-underline:after {
-  border-bottom: 2px solid #af43d1;
+  border-bottom: 1px solid #af43d1 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #af43d1 !important;
 }
 
 .delete-product {
@@ -255,4 +260,35 @@ input[type="file" i]::-webkit-file-upload-button {
 
 .detail-edit .product-name {
   margin-right: 1em;
+}
+
+.editing form {
+  padding: unset;
+  flex-direction: row;
+}
+
+.editing .MuiInput-root {
+  text-shadow: 0px 0px 12px #a91fd4;
+  -webkit-text-stroke: 1px #821fd496;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.editing .MuiInputLabel-root {
+  color: #bbb;
+}
+
+.editing button {
+  cursor: pointer;
+  background: transparent;
+  width: fit-content;
+  outline: 0;
+  border: 0;
+  color: #a4ed82;
+}
+
+.editing button:hover {
+  color: #57f50e;
+  transition: 0.5s;
 }

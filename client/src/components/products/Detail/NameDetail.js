@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ClickAwayListener } from "@material-ui/core";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import { Mutation } from "react-apollo";
 import NameField from "../../common/fields/NameField";
 import EditTools from "../../common/EditTools";
@@ -16,7 +17,7 @@ const NameDetail = (props) => {
       <Mutation mutation={UPDATE_PRODUCT_NAME}>
         {(updateName, data) => (
           <ClickAwayListener onClickAway={() => handleEdit(false)}>
-            <div>
+            <div className="editing">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -31,10 +32,11 @@ const NameDetail = (props) => {
                 <NameField
                   name={name}
                   entity="Product"
+                  variant="standard"
                   onChange={(e) => update(e.target.value)}
                 />
-                <button className="update-btn" type="submit">
-                  Update Name
+                <button className="update-btn" type="submit" title="Submit Changes">
+                  <CheckCircleOutlineIcon />
                 </button>
               </form>
             </div>
