@@ -44,7 +44,7 @@ const NameDetail = (props) => {
     );
   } else {
     return (
-      <div>
+      <div className="detail-edit name-edit">
         <h1 className="product-name">{name}</h1>
         <EditTools onClick={() => handleEdit(true)} title="Edit Product Name"/>
       </div>

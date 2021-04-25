@@ -242,3 +242,17 @@ input[type="file" i]::-webkit-file-upload-button {
   border: 1px solid #af43d1;
   box-shadow: 0px 0px 4px 1px inset #5f45c4;
 }
+
+.edit-tools svg {
+  cursor: pointer;
+  font-size: 12px;
+  fill: #bbbbbb;
+}
+
+.detail-edit {
+  display: flex;
+}
+
+.detail-edit .product-name {
+  margin-right: 1em;
+}
