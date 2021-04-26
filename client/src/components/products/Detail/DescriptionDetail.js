@@ -29,6 +29,7 @@ const DescriptionDetail = (props) => {
                 }}
               >
                 <textarea
+                  className="update-description"
                   value={description}
                   onChange={(e) => update(e.target.value)}
                 />

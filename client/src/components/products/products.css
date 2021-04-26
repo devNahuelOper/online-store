@@ -69,7 +69,8 @@
 
 .product-description {
   font-size: 2em;
-  margin-top: -40px;
+  margin-right: 1em;
+  /* margin-top: -40px; */
 }
 
 .product-cost b {
@@ -140,7 +141,7 @@
   transition: 1s;
 }
 
-.new-description {
+.new-description, .update-description {
   color: #ccbad1;
   font-size: 1rem;
   padding: 18.5px 14px;
@@ -153,6 +154,11 @@
 .new-description::-webkit-input-placeholder {
   color: #a5a5a596;
   font-family: inherit;
+}
+
+.update-description {
+  width: 100%;
+  min-height: 80px;
 }
 
 .product-weight input[type="number" i] {
@@ -256,6 +262,7 @@ input[type="file" i]::-webkit-file-upload-button {
 
 .detail-edit {
   display: flex;
+  align-items: center;
 }
 
 .detail-edit .product-name {
@@ -292,3 +299,4 @@ input[type="file" i]::-webkit-file-upload-button {
   color: #57f50e;
   transition: 0.5s;
 }
+

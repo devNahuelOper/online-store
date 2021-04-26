@@ -64,7 +64,7 @@ const Mutations = {
     }
   `,
   UPDATE_PRODUCT_DESCRIPTION: gql`
-    mutation updateProductDescription($_id: ID!, $name: String) {
+    mutation updateProductDescription($_id: ID!, $description: String) {
       updateProduct(_id: $_id, description: $description) {
         _id
         description

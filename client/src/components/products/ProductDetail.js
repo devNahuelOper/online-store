@@ -2,6 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import DeleteProduct from "./DeleteProduct";
 import NameDetail from "./Detail/NameDetail";
+import DescriptionDetail from "./Detail/DescriptionDetail";
 
 import Queries from "../../graphql/queries";
 const { FETCH_PRODUCT } = Queries;
@@ -23,9 +24,9 @@ const ProductDetail = (props) => {
           <div className="product-detail">
             <DeleteProduct _id={_id} name={name} />
             <article className="product-info">
-              {/* <h1 className="product-name">{name}</h1> */}
               <NameDetail _id={_id} name={name}/>
-              <p className="product-description">{description}</p>
+              <DescriptionDetail _id={_id} description={description}/>
+              {/* <p className="product-description">{description}</p> */}
               <span className="product-cost">
                 Cost: <b>${cost}.00</b>
               </span>
