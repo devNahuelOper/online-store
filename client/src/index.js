@@ -54,9 +54,17 @@ if (token) {
       cache.writeData({
         data: {
           isLoggedIn: data.verifyUser.loggedIn,
+          cart: [],
         },
       });
     });
+} else {
+  cache.writeData({
+    data: {
+      isLoggedIn: false,
+      cart: [],
+    },
+  });
 }
 
 const Root = () => {

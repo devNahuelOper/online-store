@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const Queries = {
   FETCH_PRODUCTS: gql`
-    query FetchProducts{
+    query FetchProducts {
       products {
         _id
         name
@@ -36,6 +36,11 @@ const Queries = {
   IS_LOGGED_IN: gql`
     query IsUserLoggedIn {
       isLoggedIn @client
+    }
+  `,
+  FETCH_CART_ITEMS: gql`
+    query FetchCartItems {
+      cart @client
     }
   `,
 };

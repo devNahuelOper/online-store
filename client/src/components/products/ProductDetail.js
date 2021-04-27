@@ -3,7 +3,7 @@ import { Query } from "react-apollo";
 import DeleteProduct from "./DeleteProduct";
 import NameDetail from "./Detail/NameDetail";
 import DescriptionDetail from "./Detail/DescriptionDetail";
-
+import AddToCart from "../cart/AddToCart";
 import Queries from "../../graphql/queries";
 const { FETCH_PRODUCT } = Queries;
 
@@ -24,15 +24,15 @@ const ProductDetail = (props) => {
           <div className="product-detail">
             <DeleteProduct _id={_id} name={name} />
             <article className="product-info">
-              <NameDetail _id={_id} name={name}/>
-              <DescriptionDetail _id={_id} description={description}/>
-              {/* <p className="product-description">{description}</p> */}
+              <NameDetail _id={_id} name={name} />
+              <DescriptionDetail _id={_id} description={description} />
+              <AddToCart _id={_id} name={name} cost={cost}/>
               <span className="product-cost">
                 Cost: <b>${cost}.00</b>
               </span>
             </article>
             <figure className="product-image">
-              <img src={image || altImage} alt={name}/>
+              <img src={image || altImage} alt={name} />
             </figure>
           </div>
         );
