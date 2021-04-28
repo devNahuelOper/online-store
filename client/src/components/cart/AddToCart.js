@@ -14,8 +14,19 @@ const AddToCart = ({ _id, name, cost }) => {
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
         console.log(data.cart);
+
         const inCart = data.cart.find((item) => item._id == _id);
-        
+
+        const addToCart = (cache, { data }) => {
+          const addedItem = { _id, cost, name };
+          let cart;
+
+          try {
+            cart = cache.readQuery({query: FETCH_CART_ITEMS});
+          } catch (err) {
+            return;
+          }
+        }
         if (!inCart) {
           return (
             <div>
