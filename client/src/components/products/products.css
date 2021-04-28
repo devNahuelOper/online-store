@@ -300,3 +300,6 @@ input[type="file" i]::-webkit-file-upload-button {
   transition: 0.5s;
 }
 
+.add-to-cart {
+  cursor: pointer;
+}

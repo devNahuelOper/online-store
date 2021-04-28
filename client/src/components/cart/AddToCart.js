@@ -8,7 +8,7 @@ const { FETCH_CART_ITEMS } = Queries;
 
 const AddToCart = ({ _id, name, cost }) => {
 
-  const addItemToCart = (cache, { data }) => {
+  const addItemToCart = (cache) => {
     const addedItem = { _id, cost, name };
     let cart;
 
@@ -25,7 +25,10 @@ const AddToCart = ({ _id, name, cost }) => {
         data: { cart: [...cartArray, addedItem] },
       });
     }
+
+    console.log(cart);
   };
+
   return (
     <Query query={FETCH_CART_ITEMS}>
       {({ loading, error, data }) => {
@@ -34,11 +37,12 @@ const AddToCart = ({ _id, name, cost }) => {
         console.log(data.cart);
 
         const inCart = data.cart.find((item) => item._id == _id);
+        console.log(inCart);
 
         if (!inCart) {
           return (
             <div>
-              <AddShoppingCartIcon />
+              <AddShoppingCartIcon className="add-to-cart" title={`Add ${name} to Cart`} onClick={(cache) => addItemToCart(cache)}/>
             </div>
           );
         } else {
