@@ -7,7 +7,25 @@ import Queries from "../../graphql/queries";
 const { FETCH_CART_ITEMS } = Queries;
 
 const AddToCart = ({ _id, name, cost }) => {
-  
+
+  const addItemToCart = (cache, { data }) => {
+    const addedItem = { _id, cost, name };
+    let cart;
+
+    try {
+      cart = cache.readQuery({ query: FETCH_CART_ITEMS });
+    } catch (err) {
+      return;
+    }
+
+    if (cart) {
+      let cartArray = cart.cart;
+      cache.writeQuery({
+        query: FETCH_CART_ITEMS,
+        data: { cart: [...cartArray, addedItem] },
+      });
+    }
+  };
   return (
     <Query query={FETCH_CART_ITEMS}>
       {({ loading, error, data }) => {
@@ -17,28 +35,18 @@ const AddToCart = ({ _id, name, cost }) => {
 
         const inCart = data.cart.find((item) => item._id == _id);
 
-        const addToCart = (cache, { data }) => {
-          const addedItem = { _id, cost, name };
-          let cart;
-
-          try {
-            cart = cache.readQuery({query: FETCH_CART_ITEMS});
-          } catch (err) {
-            return;
-          }
-        }
         if (!inCart) {
           return (
             <div>
               <AddShoppingCartIcon />
             </div>
-          )
+          );
         } else {
           return (
             <div>
               <RemoveShoppingCartIcon />
             </div>
-          )
+          );
         }
       }}
     </Query>
