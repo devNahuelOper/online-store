@@ -8,8 +8,11 @@ const { FETCH_CART_ITEMS } = Queries;
 
 const AddToCart = ({ _id, name, cost }) => {
 
-  const addItemToCart = (cache) => {
+  const addItemToCart = (e, cache) => {
+    e.preventDefault();
     const addedItem = { _id, cost, name };
+    console.log('cache', cache);
+    console.log('item', addedItem);
     let cart;
 
     try {
@@ -17,6 +20,8 @@ const AddToCart = ({ _id, name, cost }) => {
     } catch (err) {
       return;
     }
+
+    // inCart = cart?.cart.find((item) => item._id == _id);
 
     if (cart) {
       let cartArray = cart.cart;
@@ -42,7 +47,7 @@ const AddToCart = ({ _id, name, cost }) => {
         if (!inCart) {
           return (
             <div>
-              <AddShoppingCartIcon className="add-to-cart" title={`Add ${name} to Cart`} onClick={(cache) => addItemToCart(cache)}/>
+              <AddShoppingCartIcon className="add-to-cart" title={`Add ${name} to Cart`} onClick={(e, cache) => addItemToCart(e, cache)}/>
             </div>
           );
         } else {
@@ -55,6 +60,23 @@ const AddToCart = ({ _id, name, cost }) => {
       }}
     </Query>
   );
+  // if (!inCart) {
+  //   return (
+  //     <div>
+  //       <AddShoppingCartIcon
+  //         className="add-to-cart"
+  //         title={`Add ${name} to Cart`}
+  //         onClick={(cache) => addItemToCart(cache)}
+  //       />
+  //     </div>
+  //   );
+  // } else {
+  //   return (
+  //     <div>
+  //       <RemoveShoppingCartIcon />
+  //     </div>
+  //   );
+  // }
 };
 
 export default AddToCart;
