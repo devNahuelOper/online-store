@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Query, Mutation } from "react-apollo";
@@ -6,40 +6,14 @@ import { Query, Mutation } from "react-apollo";
 import Queries from "../../graphql/queries";
 const { FETCH_CART_ITEMS } = Queries;
 
-const AddToCart = ({ _id, name, cost }) => {
-
-  const addItemToCart = (cache, { data }) => {
-    const addedItem = { _id, cost, name };
-    console.log('cache', cache);
-    console.log('item', addedItem);
-    console.log('data', data)
-    let cart;
-
-    try {
-      cart = cache.readQuery({ query: FETCH_CART_ITEMS });
-    } catch (err) {
-      return;
-    }
-
-    // inCart = cart?.cart.find((item) => item._id == _id);
-
-    if (cart) {
-      let cartArray = cart.cart;
-      cache.writeQuery({
-        query: FETCH_CART_ITEMS,
-        data: { cart: [...cartArray, addedItem] },
-      });
-    }
-
-    console.log(cart);
-  };
-
+const AddCart = ({ _id, name, cost }) => {
+  
   return (
     <Query query={FETCH_CART_ITEMS}>
       {({ loading, error, data }) => {
+        console.log(client);
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
-        console.log(data.cart);
 
         const inCart = data.cart.find((item) => item._id == _id);
         console.log(inCart);
@@ -85,4 +59,4 @@ const AddToCart = ({ _id, name, cost }) => {
   // }
 };
 
-export default AddToCart;
+export default AddCart;
