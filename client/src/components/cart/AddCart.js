@@ -11,7 +11,6 @@ const AddCart = ({ _id, name, cost }) => {
   return (
     <Query query={FETCH_CART_ITEMS}>
       {({ loading, error, data }) => {
-        console.log(client);
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
 
