@@ -28,6 +28,25 @@ const AddToCart = (props) => {
     }
   };
 
+  const removeItemFromCart = (e, cache) => {
+    e.preventDefault();
+
+    let { cart };
+
+    try {
+      cart = cache.readQuery({ query: FETCH_CART_ITEMS });
+    } catch (err) {
+      return;
+    }
+
+    if (cart) {
+      cache.writeQuery({
+        query: FETCH_CART_ITEMS,
+        data: { cart: cart.filter((item) => item._id !== props._id) },
+      });
+    }
+  };
+
   return (
     <ApolloConsumer>
       {(cache) => (
@@ -51,7 +70,11 @@ const AddToCart = (props) => {
             } else {
               return (
                 <div>
-                  <RemoveShoppingCartIcon />
+                  <RemoveShoppingCartIcon
+                    className="add-to-cart"
+                    title={`Remove ${props.name} from Cart`}
+                    onClick={e => removeItemFromCart(e, cache)}
+                  />
                 </div>
               );
             }
