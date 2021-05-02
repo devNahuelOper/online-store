@@ -31,7 +31,7 @@ const AddToCart = (props) => {
   const removeItemFromCart = (e, cache) => {
     e.preventDefault();
 
-    let { cart };
+    let cart;
 
     try {
       cart = cache.readQuery({ query: FETCH_CART_ITEMS });
@@ -42,7 +42,7 @@ const AddToCart = (props) => {
     if (cart) {
       cache.writeQuery({
         query: FETCH_CART_ITEMS,
-        data: { cart: cart.filter((item) => item._id !== props._id) },
+        data: { cart: cart.cart.filter((item) => item._id !== props._id) },
       });
     }
   };
