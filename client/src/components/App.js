@@ -7,6 +7,7 @@ import ProductCreate from "./products/ProductCreate";
 import Login from "./session/Login";
 import Register from "./session/Register";
 import Nav from "./Nav";
+import Cart from "./cart/Cart";
 import "../App.css";
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/new" component={ProductCreate}/>
         <Route path="/" component={ProductIndex} />
         <Route exact path="/products" component={ProductIndex} />
+        <Route path="/cart" component={Cart}/>
       </Switch>
     </div>
   );
