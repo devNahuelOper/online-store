@@ -93,6 +93,14 @@ const Nav = (props) => {
                         Register
                       </Typography>
                     </Link>
+                    <Link to="/cart">
+                      <Typography
+                        variant="h5"
+                        className={`nav-title ${classes.title}`}
+                      >
+                        Cart
+                      </Typography>
+                    </Link>
                   </Toolbar>
                 </AppBar>
               </MuiThemeProvider>
