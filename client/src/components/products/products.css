@@ -303,3 +303,10 @@ input[type="file" i]::-webkit-file-upload-button {
 .add-to-cart {
   cursor: pointer;
 }
+
+.cart {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

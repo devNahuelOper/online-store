@@ -15,7 +15,7 @@ const Cart = () => {
         let cost = 0;
 
         return (
-          <div>
+          <div className="cart">
             <h3>Shopping Cart</h3>
             {!data.cart || !data.cart.length  ? (
               <p>The Cart is Empty</p>
