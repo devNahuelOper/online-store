@@ -20,9 +20,9 @@ function App() {
         <Route exact path="/register" component={Register}/>
         <Route path="/products/:productId" component={ProductDetail}/>
         <Route path="/new" component={ProductCreate}/>
+        <Route path="/cart" component={Cart}/>
         <Route path="/" component={ProductIndex} />
         <Route exact path="/products" component={ProductIndex} />
-        <Route path="/cart" component={Cart}/>
       </Switch>
     </div>
   );
