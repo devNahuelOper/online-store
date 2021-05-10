@@ -6,6 +6,7 @@ import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
+import { persistCache, LocalStorageWrapper } from "apollo3-cache-persist";
 // import { createHttpLink } from "apollo-link-http";
 import { createUploadLink } from "apollo-upload-client";
 import { ApolloProvider } from "react-apollo";
@@ -17,6 +18,13 @@ const { VERIFY_USER } = Mutations;
 const cache = new InMemoryCache({
   dataIdFromObject: (object) => object._id || null,
 });
+
+(async () => {
+  await persistCache({
+    cache,
+    storage: new LocalStorageWrapper(window.localStorage),
+  });
+})();
 
 const httpLink = createUploadLink({
   uri: "http://localhost:5000/graphql",

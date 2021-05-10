@@ -18,10 +18,10 @@ function App() {
       <Switch>
         <AuthRoute exact path="/login" component={Login} routeType="auth"/>
         <Route exact path="/register" component={Register}/>
-        <Route path="/products/:productId" component={ProductDetail}/>
-        <Route path="/new" component={ProductCreate}/>
-        <Route path="/cart" component={Cart}/>
-        <Route path="/" component={ProductIndex} />
+        <Route exact path="/products/:productId" component={ProductDetail}/>
+        <Route exact path="/new" component={ProductCreate}/>
+        <Route exact path="/cart" component={Cart}/>
+        <Route exact path="/" component={ProductIndex} />
         <Route exact path="/products" component={ProductIndex} />
       </Switch>
     </div>
