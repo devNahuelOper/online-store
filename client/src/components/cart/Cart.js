@@ -16,7 +16,7 @@ const Cart = () => {
 
         return (
           <div className="cart">
-            <h3>Shopping Cart</h3>
+            <h1>Shopping Cart</h1>
             {!data.cart || !data.cart.length  ? (
               <p>The Cart is Empty</p>
             ) : (
