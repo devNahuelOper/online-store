@@ -13,15 +13,18 @@ const CartItem = ({ _id }) => {
 
         const { name, description, cost } = data.product;
         return (
-          <div>
-            <p>Name: {name}</p>
-            <p>Description: {description}</p>
-            <p>Price: ${cost}</p>
-          </div>
-        )
+          <>
+            <div className="cart-item">
+              <p>Name: {name}</p>
+              <p>Description: {description}</p>
+              <p>Price: ${cost}</p>
+            </div>
+            <hr />
+          </>
+        );
       }}
     </Query>
-  )
-}
+  );
+};
 
 export default CartItem;
