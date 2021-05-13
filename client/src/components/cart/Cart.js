@@ -16,9 +16,9 @@ const Cart = () => {
 
         return (
           <div className="cart">
-            <h1>Shopping Cart</h1>
+            <h1 className="cart-title">Shopping Cart</h1>
             {!data.cart || !data.cart.length  ? (
-              <p>The Cart is Empty</p>
+              <p>The Cart is Empty 🛒</p>
             ) : (
               <div>
                 {data.cart.map(product => {
