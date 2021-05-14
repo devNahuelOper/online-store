@@ -55,7 +55,7 @@ const AddToCart = (props) => {
             if (loading) return "Loading...";
             if (error) return `Error! ${error.message}`;
 
-            const inCart = data.cart.some((item) => item._id == props._id);
+            const inCart = data.cart.some((item) => item._id === props._id);
 
             if (!inCart) {
               return (
