@@ -43,6 +43,18 @@ const Queries = {
       cart @client
     }
   `,
+  FETCH_CATEGORIES: gql`
+    query FetchCategories {
+      categories {
+        _id
+        name
+        products {
+          _id
+          name
+        }
+      }
+    }
+  `
 };
 
 export default Queries;
