@@ -12,7 +12,6 @@ const CartItem = (props) => {
         if (error) return <p>{error.message}</p>;
 
         const { name, description, cost } = data.product;
-        console.log(data.product);
         return (
           <>
             <div className="cart-item">
@@ -20,7 +19,6 @@ const CartItem = (props) => {
               <p>Description: {description}</p>
               <p>Price: ${cost}</p>
             </div>
-            <hr />
           </>
         );
       }}

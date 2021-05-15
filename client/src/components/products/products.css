@@ -312,8 +312,22 @@ input[type="file" i]::-webkit-file-upload-button {
   align-items: center;
 }
 
+.cart-item {
+  background-color: #363636;
+  color: white;
+  border-radius: 0.5em;
+  padding: 1em;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
 .cart-title {
   color: #363636;
   -webkit-text-stroke: 1px #b686c7;
   text-shadow: 0px 0px 2px #733780;
+}
+
+.total {
+  margin: 8em auto;
+  max-width: 70%;
 }

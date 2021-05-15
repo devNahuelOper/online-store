@@ -47,19 +47,22 @@ export default function Cart() {
         return (
           <div className="cart">
             <h1 className="cart-title">Shopping Cart</h1>
-            {!data.cart || !data.cart.length  ? (
+            {!data.cart || !data.cart.length ? (
               <p>The Cart is Empty 🛒</p>
             ) : (
               <div>
-                {data.cart.map(product => {
+                {data.cart.map((product) => {
                   cost += product.cost;
-                  return <CartItem key={product._id} _id={product._id}/>
+                  return <CartItem key={product._id} _id={product._id} />;
                 })}
-                <b>Total: ${cost}</b>
+                <section className="total">
+                  <hr />
+                  <b>Total: ${cost}</b>
+                </section>
               </div>
             )}
           </div>
-        )
+        );
       }}
     </Query>
   );
