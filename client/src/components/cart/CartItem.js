@@ -15,8 +15,8 @@ const CartItem = (props) => {
         return (
           <>
             <div className="cart-item">
-              <p>Name: {name}</p>
-              <p>Description: {description}</p>
+              <h3>{name}</h3>
+              <p>{description}</p>
               <p>Price: ${cost}</p>
             </div>
           </>

@@ -230,10 +230,10 @@ input[type="file" i]::-webkit-file-upload-button {
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
     0px 0px 0px 1px #bd44bd;
+  border: 1px solid #5036ae;
   /* background-color: #6f6f6f; */
   background-color: rgba(0, 0, 0, 0.4);
   color: #ccbad1;
-  border: 1px solid #5036ae;
   border-radius: 0.5em;
 }
 
@@ -319,6 +319,10 @@ input[type="file" i]::-webkit-file-upload-button {
   padding: 1em;
   max-width: 70%;
   margin: 0 auto;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
+    0px 0px 0px 1px #bd44bd;
+  border: 1px solid #5036ae;
 }
 
 .cart-title {
