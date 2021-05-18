@@ -11,11 +11,14 @@ const CartItem = (props) => {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>{error.message}</p>;
 
-        const { name, description, cost } = data.product;
+        const { name, description, cost, image } = data.product;
         return (
           <>
             <div className="cart-item">
-              <h3>{name}</h3>
+              <figure>
+                <h3>{name}</h3>
+                <img src={image} alt={name} />
+              </figure>
               <p>{description}</p>
               <p>Price: ${cost}</p>
             </div>
