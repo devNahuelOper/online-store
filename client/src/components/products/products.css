@@ -325,6 +325,19 @@ input[type="file" i]::-webkit-file-upload-button {
   border: 1px solid #5036ae;
 }
 
+.cart-item figure {
+  margin: unset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5em;
+}
+
 .cart-title {
   color: #363636;
   -webkit-text-stroke: 1px #b686c7;
