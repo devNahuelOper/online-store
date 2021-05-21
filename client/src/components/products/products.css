@@ -70,7 +70,6 @@
 .product-description {
   font-size: 2em;
   margin-right: 1em;
-  /* margin-top: -40px; */
 }
 
 .product-cost b {
@@ -231,7 +230,6 @@ input[type="file" i]::-webkit-file-upload-button {
     0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%),
     0px 0px 0px 1px #bd44bd;
   border: 1px solid #5036ae;
-  /* background-color: #6f6f6f; */
   background-color: rgba(0, 0, 0, 0.4);
   color: #ccbad1;
   border-radius: 0.5em;
