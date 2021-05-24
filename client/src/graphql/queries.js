@@ -54,6 +54,18 @@ const Queries = {
         }
       }
     }
+  `,
+  FETCH_CATEGORY: gql`
+    query FetchCategory($_id: ID!) {
+      category(_id: $_id) {
+        _id
+        name
+        products {
+          _id
+          name
+        }
+      }
+    }
   `
 };
 
