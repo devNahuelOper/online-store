@@ -25,7 +25,7 @@ const ProductDetail = (props) => {
             <article className="product-info">
               <NameDetail _id={_id} name={name} />
               <DescriptionDetail _id={_id} description={description} />
-              <AddToCart _id={_id} name={name} cost={cost}/>
+              <AddToCart _id={_id} name={name} cost={cost} />
               <span className="product-cost">
                 Cost: <b>${cost}.00</b>
               </span>
