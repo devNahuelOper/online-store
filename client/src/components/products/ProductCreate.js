@@ -68,14 +68,8 @@ class ProductCreate extends React.Component {
   }
 
   render() {
-    const {
-      name,
-      description,
-      weight,
-      message,
-      messageType,
-      preview,
-    } = this.state;
+    const { name, description, weight, message, messageType, preview } =
+      this.state;
 
     return (
       <Mutation
@@ -128,17 +122,17 @@ class ProductCreate extends React.Component {
               <figure className="preview__wrap">
                 <Button variant="contained" component="label">
                   Upload Image
-                <input
-                  type="file"
-                  accept="image/*"
-                  hidden
-                  onChange={({
-                    target: {
-                      validity,
-                      files: [file],
-                    },
-                  }) => validity.valid && this.updateImage(file)}
-                />
+                  <input
+                    type="file"
+                    accept="image/*"
+                    hidden
+                    onChange={({
+                      target: {
+                        validity,
+                        files: [file],
+                      },
+                    }) => validity.valid && this.updateImage(file)}
+                  />
                 </Button>
                 {preview && <img src={preview} className="image-preview" />}
               </figure>
