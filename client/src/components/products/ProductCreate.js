@@ -134,7 +134,7 @@ class ProductCreate extends React.Component {
                     }) => validity.valid && this.updateImage(file)}
                   />
                 </Button>
-                {preview && <img src={preview} className="image-preview" />}
+                {preview && <img src={preview} className="image-preview" alt="Product Preview"/>}
               </figure>
               <br />
               <CreateButton entity="product" />
