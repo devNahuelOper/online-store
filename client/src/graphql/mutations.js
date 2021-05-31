@@ -79,6 +79,14 @@ const Mutations = {
       }
     }
   `,
+  UPDATE_PRODUCT_CATEGORY: gql`
+    mutation updateProductCategory($productId: ID!, $categoryId: ID!) {
+      updateProductCategory(productId: $productId, categoryId: $categoryId) {
+        productId
+        categoryId
+      }
+    }
+  `
 };
 
 export default Mutations;
