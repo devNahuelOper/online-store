@@ -19,7 +19,7 @@ const ProductDetail = (props) => {
         if (error) return `Error! ${error.message}`;
 
         const { _id, name, description, cost, image, category } = data.product;
-        console.log(category);
+        
         return (
           <div className="product-detail">
             <DeleteProduct _id={_id} name={name} />
