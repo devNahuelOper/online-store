@@ -18,7 +18,7 @@ const ProductDetail = (props) => {
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
 
-        const { _id, name, description, cost, image, category } = data.product;
+        const { _id, name, description, cost, image } = data.product;
         
         return (
           <div className="product-detail">
