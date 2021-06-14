@@ -1,6 +1,5 @@
 import React from "react";
 import { Query } from "react-apollo";
-
 import Queries from "../../graphql/queries";
 const { FETCH_PRODUCT } = Queries;
 
