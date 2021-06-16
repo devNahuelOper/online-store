@@ -11,6 +11,7 @@ const CartItem = (props) => {
         if (error) return <p>{error.message}</p>;
 
         const { name, description, cost, image } = data.product;
+        
         return (
           <>
             <div className="cart-item">
