@@ -13,6 +13,7 @@ export default function Cart() {
         if (error) return <p>Error: {error.message}</p>;
 
         let cost = 0;
+        
         return (
           <div className="cart">
             <h1 className="cart-title">Shopping Cart</h1>
