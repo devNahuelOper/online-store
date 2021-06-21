@@ -10,7 +10,7 @@ const { FETCH_PRODUCTS } = Queries;
 
 const DeleteProduct = ({ _id, name }) => {
   const history = useHistory();
-  
+
   return (
     <Mutation
       mutation={DELETE_PRODUCT}
@@ -33,7 +33,7 @@ const DeleteProduct = ({ _id, name }) => {
           }}
           title={`Delete ${name}`}
         >
-          <DeleteIcon color="action"/>
+          <DeleteIcon color="action" />
         </a>
       )}
     </Mutation>
