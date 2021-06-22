@@ -8,6 +8,7 @@ import CreateButton from "../common/buttons/CreateButton";
 
 import Mutations from "../../graphql/mutations";
 import Queries from "../../graphql/queries";
+
 const { CREATE_PRODUCT } = Mutations;
 const { FETCH_PRODUCTS } = Queries;
 
