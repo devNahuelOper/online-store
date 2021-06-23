@@ -45,7 +45,7 @@ class Register extends React.Component {
         mutation={REGISTER_USER}
         onError={(err) => this.setState({ message: err.message })}
         onCompleted={(data) => {
-          console.log(data);
+          // console.log(data);
           const { token } = data.register;
           localStorage.setItem("auth-token", token);
           this.props.history.push("/");
