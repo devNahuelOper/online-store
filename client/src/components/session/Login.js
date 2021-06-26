@@ -1,8 +1,8 @@
 import React from "react";
-import { Mutation } from "react-apollo";
 import Button from "@material-ui/core/Button";
 import PasswordField from "../common/fields/PasswordField";
 import EmailField from "../common/fields/EmailField";
+import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
 const { LOGIN_USER } = Mutations;
 
