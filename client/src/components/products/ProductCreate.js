@@ -3,8 +3,8 @@ import { Mutation } from "react-apollo";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
-import NameField from "../common/fields/NameField";
 import CreateButton from "../common/buttons/CreateButton";
+import NameField from "../common/fields/NameField";
 
 import Mutations from "../../graphql/mutations";
 import Queries from "../../graphql/queries";
