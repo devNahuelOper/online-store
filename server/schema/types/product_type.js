@@ -8,7 +8,6 @@ const {
 } = graphql;
 const mongoose = require("mongoose");
 const Product = mongoose.model("products");
-
 const { s3 } = require("../../services/s3");
 
 const ProductType = new GraphQLObjectType({
