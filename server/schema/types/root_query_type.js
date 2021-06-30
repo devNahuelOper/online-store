@@ -4,10 +4,8 @@ const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
 
 const UserType = require("./user_type");
 const User = mongoose.model("users");
-
 const CategoryType = require("./category_type");
 const Category = mongoose.model("categories");
-
 const ProductType = require("./product_type");
 const Product = mongoose.model("products");
 
