@@ -73,7 +73,6 @@ const RootQueryType = new GraphQLObjectType({
         return Product.findById(args._id).then(product => {
           return axios(authOptions).then(res => {
             product.cost = res.data.cost;
-
             return product;
           })
         })
