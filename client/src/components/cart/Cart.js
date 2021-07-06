@@ -1,7 +1,6 @@
 import React from "react";
 import { Query } from "react-apollo";
 import CartItem from "./CartItem";
-
 import Queries from "../../graphql/queries";
 const { FETCH_CART_ITEMS } = Queries;
 
