@@ -81,7 +81,6 @@ class ProductCreate extends React.Component {
         }
         update={(cache, data) => this.updateCache(cache, data)}
         onCompleted={(data) => {
-          console.log(data);
           this.setState({
             message: `${data.newProduct.name} created successfully`,
             messageType: "success",
