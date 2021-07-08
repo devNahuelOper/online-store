@@ -6,7 +6,6 @@ const {
   GraphQLInt,
   GraphQLBoolean,
 } = graphql;
-
 const mongoose = require("mongoose");
 
 const UserType = new GraphQLObjectType({
