@@ -3,7 +3,6 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLID,
-  GraphQLInt,
   GraphQLBoolean,
 } = graphql;
 const mongoose = require("mongoose");
