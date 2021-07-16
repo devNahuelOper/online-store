@@ -3,7 +3,6 @@ import Button from "@material-ui/core/Button";
 import {
   MuiThemeProvider,
   createMuiTheme,
-  // makeStyles,
 } from "@material-ui/core/styles";
 
 const CreateButton = ({ entity, color = "#363636" }) => {
