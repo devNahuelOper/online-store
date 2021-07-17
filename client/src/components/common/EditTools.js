@@ -6,7 +6,7 @@ const EditTools = ({ onClick, title, icon = "pencil"}) => {
   return (
     <div className={`edit-tools ${icon}-tool`} onClick={onClick} title={title}>
       <IconContext.Provider value={{ className: `custom-icon ${icon}`}}>
-        {icon == "pencil" && <FaPencilAlt />}
+        {icon === "pencil" && <FaPencilAlt />}
       </IconContext.Provider>
     </div>
   )
