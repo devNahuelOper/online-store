@@ -1,6 +1,6 @@
 import React from "react";
 import { IconContext } from "react-icons";
-import { FaPencilAlt, FaPlus, FaMinus } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
 
 const EditTools = ({ onClick, title, icon = "pencil"}) => {
   return (
