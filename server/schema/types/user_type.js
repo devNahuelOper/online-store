@@ -7,7 +7,6 @@ const {
 } = graphql;
 const mongoose = require("mongoose");
 
-
 const UserType = new GraphQLObjectType({
   name: "UserType",
   fields: () => ({
