@@ -4,7 +4,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { useHistory } from "react-router-dom";
 import Mutations from "../../graphql/mutations";
 import Queries from "../../graphql/queries";
-
 const { DELETE_PRODUCT } = Mutations;
 const { FETCH_PRODUCTS } = Queries;
 
