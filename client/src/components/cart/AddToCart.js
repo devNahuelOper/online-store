@@ -3,7 +3,6 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Query, ApolloConsumer } from "react-apollo";
 import Queries from "../../graphql/queries";
-
 const { FETCH_CART_ITEMS } = Queries;
 
 const AddToCart = (props) => {
