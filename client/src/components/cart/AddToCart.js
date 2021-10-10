@@ -85,5 +85,4 @@ const AddToCart = (props) => {
   );
 };
 
-
 export default AddToCart;
