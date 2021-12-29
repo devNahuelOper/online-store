@@ -4,6 +4,7 @@ import { ClickAwayListener } from "@material-ui/core";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import EditTools from "../../common/EditTools";
 import Mutations from "../../../graphql/mutations";
+
 const { UPDATE_PRODUCT_DESCRIPTION } = Mutations;
 
 const DescriptionDetail = (props) => {
