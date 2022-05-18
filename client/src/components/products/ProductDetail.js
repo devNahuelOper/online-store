@@ -5,6 +5,7 @@ import NameDetail from "./Detail/NameDetail";
 import DescriptionDetail from "./Detail/DescriptionDetail";
 import AddToCart from "../cart/AddToCart";
 import Queries from "../../graphql/queries";
+
 const { FETCH_PRODUCT } = Queries;
 
 const ProductDetail = (props) => {
@@ -32,7 +33,7 @@ const ProductDetail = (props) => {
               </span>
             </article>
             <figure className="product-image">
-              <img src={image || altImage} alt={name} />
+              <img src={image.replace(/\?.*/, "") || altImage} alt={name} />
             </figure>
           </div>
         );

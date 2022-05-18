@@ -16,7 +16,6 @@ const ProductIndex = () => {
       {({ loading, error, data }) => {
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;
-
         return (
           <div className="product-index">
             <List id="product-list" className="product-list">
@@ -28,7 +27,11 @@ const ProductIndex = () => {
                     </Typography>
                   </Link>
                   <br />
-                  <img className="product-avatar" src={product.image || altImage} alt={product.name}/>
+                  <img
+                    className="product-avatar"
+                    src={product.image.replace(/\?.*/, "") || altImage}
+                    alt={product.name}
+                  />
                 </ListItem>
               ))}
             </List>
