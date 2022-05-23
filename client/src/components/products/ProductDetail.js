@@ -5,6 +5,7 @@ import NameDetail from "./Detail/NameDetail";
 import DescriptionDetail from "./Detail/DescriptionDetail";
 import AddToCart from "../cart/AddToCart";
 import Queries from "../../graphql/queries";
+
 const { FETCH_PRODUCT } = Queries;
 
 const ProductDetail = (props) => {
